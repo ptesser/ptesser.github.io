@@ -5,11 +5,16 @@ import { NgModule } from '@angular/core';
 const home = './home/home.module#HomeModule';
 const pipes = './pipes/pipes.module#PipesModule';
 const forms = './forms/forms.module#FormsModule';
+const lifeCycle = './life-cycle-hooks/life-cycle-hooks.module#LifeCycleHooksModule';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: home,
+  },
+  {
+    path: 'life-cycle',
+    loadChildren: lifeCycle,
   },
   {
     path: 'pipes',
