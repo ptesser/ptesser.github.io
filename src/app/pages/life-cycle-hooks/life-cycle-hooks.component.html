@@ -1,1 +1,11 @@
 <h1>Life Cycle Hooks</h1>
+
+<div>
+  <h2>Order of the hooks</h2>
+  <ol>
+    <li *ngFor="let hook of hooksCalled">{{ hook }}</li>
+  </ol>
+</div>
+
+<h2>Show ngOnChanges in a children component</h2>
+<app-hook-me [value]="'Hello Hook'"></app-hook-me>

@@ -6,6 +6,8 @@ const home = './home/home.module#HomeModule';
 const pipes = './pipes/pipes.module#PipesModule';
 const forms = './forms/forms.module#FormsModule';
 const lifeCycle = './life-cycle-hooks/life-cycle-hooks.module#LifeCycleHooksModule';
+const movies = './movie/movie.module#MovieModule';
+const generics = './generics/generics.module#GenericsModule';
 
 const routes: Routes = [
   {
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: 'forms',
     loadChildren: forms,
+  },
+  {
+    path: 'movies',
+    loadChildren: movies,
+  },
+  {
+    path: 'generics',
+    loadChildren: generics,
   }
 ];
 

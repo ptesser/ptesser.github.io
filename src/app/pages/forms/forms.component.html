@@ -77,7 +77,12 @@
           <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-success" [disabled]="!signupForm.form.valid">Submit</button>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!signupForm.form.valid">
+        Submit
+      </button>
     </form>
     <p>User data binding: {{ userTemplateDriven | json }}</p>
 </div>
@@ -85,9 +90,64 @@
 <h2>Data Driven (Reactive forms)</h2>
 <div class="data-driven">
   <h3>Signup</h3>
-  <ul>
-    <li>[ ] Replicate same behavior of the form with Reactive forms</li>
-  </ul>
+  <h4>Simple Form Control</h4>
+  <div class="form-group">
+    <label for="usernameSimpleD">Username</label>
+    <input
+      [formControl]="usernameD"
+      type="text"
+      class="form-control"
+      id="usernameSimpleD"
+      name="usernameSimpleD"
+      required>
+      <p>{{ usernameD.value | json }}</p>
+  </div>
+
+  <h4>FormControl in a FormGroup</h4>
+  <!--
+  Because the class now has a FormGroup, you must update the template syntax for associating the <input> with the corresponding FormControl in the component class.
+  Without a parent FormGroup, [formControl]="name" worked earlier because that directive can stand alone, that is,
+  it works without being in a FormGroup. With a parent FormGroup,
+  the name <input> needs the syntax formControlName=name in order to be associated with the correct FormControl in the class.
+  This syntax tells Angular to look for the parent FormGroup, in this case heroForm, and then inside that group to look for a FormControl called name.
+  -->
+  <form
+    [formGroup]="signupSimpleDataDrivenForm"
+    class="form-horizontal">
+    <div class="form-group">
+      <label for="usernameD">Username</label>
+      <input
+        formControlName="usernameD"
+        type="text"
+        class="form-control"
+        id="usernameD"
+        required>
+      <p>{{ signupSimpleDataDrivenForm.value | json }}</p>
+    </div>
+  </form>
+
+  <h4>Form Builder</h4>
+  <form
+    [formGroup]="signupDataDrivenForm"
+    class="form-horizontal">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        formControlName="username"
+        type="text"
+        class="form-control"
+        required>
+      <p>Form values: {{ signupDataDrivenForm.value | json }}</p>
+      <p>Form status: {{ signupDataDrivenForm.status | json }}</p>
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="onSubmitDataDriven()"
+        [disabled]="!signupDataDrivenForm.valid">
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
 
 
