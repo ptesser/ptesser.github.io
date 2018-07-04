@@ -5,8 +5,10 @@ import { DummyComponent } from './dummy/dummy.component';
 import { HookMeComponent } from './hook-me/hook-me.component';
 import { MovieService } from '../services/movie.service';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { AuxiliarySidebarComponent } from './auxiliary-sidebar/auxiliary-sidebar.component';
 
 const components = [
+  AuxiliarySidebarComponent,
   DummyComponent,
   HookMeComponent,
 ];
@@ -21,7 +23,7 @@ const components = [
     ...components,
     HttpClientModule,
   ],
-  declarations: [...components, HookMeComponent],
+  declarations: [...components],
 })
 export class SharedModule {
   // https://github.com/jvandemo/generator-angular2-library/issues/277 fix by @jvandemo
@@ -29,7 +31,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [MovieService],
+      providers: [ MovieService ],
     };
   }
 }
