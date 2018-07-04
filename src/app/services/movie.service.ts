@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs/Observable';
 import { MovieList, Movie } from '../models/movie';
 
 @Injectable()
@@ -18,19 +19,20 @@ export class MovieService {
     const path = `${environment.movieBaseUrl}/discover/movie?api_key=${environment.movieAppKey}`;
 
     return this.http.get(path)
-      .map((res: MovieList) => res)
-      .map((res) => {
-        const results: Movie[] = res.results.map((m) => ({
-          ...m,
-          image: `${environment.movieImageBaseUrl}/${m.poster_path}`,
-        }));
+      .pipe(
+        map((res: MovieList) => res),
+        map((res) => {
+          const results: Movie[] = res.results.map((m) => ({
+            ...m,
+            image: `${environment.movieImageBaseUrl}/${m.poster_path}`,
+          }));
+          return {
+            ...res,
+            results,
+          };
+        }),
+      );
 
-        return {
-          ...res,
-          results,
-        };
-
-      });
   }
 
   /**

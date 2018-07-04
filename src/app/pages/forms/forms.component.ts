@@ -1,8 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { User, SexEnum } from '../../models/user';
-import { NgForm, FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
-import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
+import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { Subscription, Observable } from 'rxjs';
 
 // We could create an interface also for country model
 const countries = [
