@@ -77,13 +77,13 @@ export class LifeCycleHooksComponent
   }
 
   ngAfterContentInit() {
-    this.hooksCalled.push('ngOnInit');
-    console.log('ngOnInit trigger');
+    this.hooksCalled.push('ngAfterContentInit');
+    console.log('ngAfterContentInit trigger');
   }
 
   ngAfterContentChecked() {
     this.hooksCalled.push('ngAfterContentInit');
-    console.log('ngAfterContentInit trigger');
+    console.log('ngAfterContentChecked trigger');
   }
 
   ngAfterViewInit() {
