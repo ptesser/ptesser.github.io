@@ -9,6 +9,7 @@ const lifeCycle = './life-cycle-hooks/life-cycle-hooks.module#LifeCycleHooksModu
 const movies = './movie/movie.module#MovieModule';
 const generics = './generics/generics.module#GenericsModule';
 const auxiliaryRoutes = './auxiliary-routes/auxiliary-routes.module#AuxiliaryRoutesModule';
+const changeDetection = './change-detection/change-detection.module#ChangeDetectionModule';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'auxiliary-routes',
     loadChildren: auxiliaryRoutes,
+  },
+  {
+    path: 'change-detection',
+    loadChildren: changeDetection,
   }
 ];
 
