@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-change-detection',
@@ -11,6 +12,9 @@ export class ChangeDetectionComponent implements OnInit {
     property: 'Property'
   };
 
+  items = [];
+  items$ = new BehaviorSubject(this.items);
+
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +26,10 @@ export class ChangeDetectionComponent implements OnInit {
 
   onClickFun() {
     this.object = { property: 'New Property '};
+  }
+
+  addItems() {
+    this.items.push({ title: Math.random() });
+    this.items$.next(this.items);
   }
 }

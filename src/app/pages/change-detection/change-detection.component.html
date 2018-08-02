@@ -24,4 +24,15 @@
 <hr />
 <app-run-change-detection></app-run-change-detection>
 <hr />
-<h3>Async Pipe - TODO</h3>
+
+<section>
+  <button
+    (click)="addItems()"
+    class="btn btn-primary mb-2 col-3">
+    Add items
+  </button>
+  <app-async-pipe
+    [items]="items$"
+    [asyncItems]="items$">
+  </app-async-pipe>
+</section>

@@ -6,6 +6,7 @@ import { ChangeDetectionComponent } from './change-detection.component';
 import { AlwaysTriggerComponent } from './always-trigger/always-trigger.component';
 import { SimpleOnPushComponent } from './simple-on-push/simple-on-push.component';
 import { RunChangeDetectionComponent } from './run-change-detection/run-change-detection.component';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 
 @NgModule({
   imports: [
@@ -13,10 +14,11 @@ import { RunChangeDetectionComponent } from './run-change-detection/run-change-d
     ChangeDetectionRoutingModule
   ],
   declarations: [
-    ChangeDetectionComponent,
     AlwaysTriggerComponent,
-    SimpleOnPushComponent,
+    AsyncPipeComponent,
+    ChangeDetectionComponent,
     RunChangeDetectionComponent,
+    SimpleOnPushComponent,
   ]
 })
 export class ChangeDetectionModule { }
