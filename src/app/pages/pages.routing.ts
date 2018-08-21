@@ -10,6 +10,7 @@ const movies = './movie/movie.module#MovieModule';
 const generics = './generics/generics.module#GenericsModule';
 const auxiliaryRoutes = './auxiliary-routes/auxiliary-routes.module#AuxiliaryRoutesModule';
 const changeDetection = './change-detection/change-detection.module#ChangeDetectionModule';
+const infiniteScroll = './infinite-scroll/infinite-scroll.module#InfiniteScrollModule';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'change-detection',
     loadChildren: changeDetection,
+  },
+  {
+    path: 'infinite-scroll',
+    loadChildren: infiniteScroll,
   }
 ];
 

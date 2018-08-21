@@ -1,0 +1,14 @@
+<h1>Ngx Infinite Scroll</h1>
+<div
+  class="object-container"
+  infinite-scroll
+  [infiniteScrollDistance]="scrollDistance"
+  [immediateCheck]="true"
+  [alwaysCallback]="true"
+  (scrolled)="onScrollDown()">
+  <div
+    class="card d-flex justify-content-center align-items-center p-4 mb-1"
+    *ngFor="let i of items">
+    <h3>{{ i }}</h3>
+  </div>
+</div>
