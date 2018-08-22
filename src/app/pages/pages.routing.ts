@@ -11,6 +11,7 @@ const generics = './generics/generics.module#GenericsModule';
 const auxiliaryRoutes = './auxiliary-routes/auxiliary-routes.module#AuxiliaryRoutesModule';
 const changeDetection = './change-detection/change-detection.module#ChangeDetectionModule';
 const infiniteScroll = './infinite-scroll/infinite-scroll.module#InfiniteScrollModule';
+const ngTemplateContainer = './ng-template-and-container/ng-template-and-container.module#NgTemplateAndContainerModule';
 
 const routes: Routes = [
   {
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: 'infinite-scroll',
     loadChildren: infiniteScroll,
+  },
+  {
+    path: 'ng-template-container',
+    loadChildren: ngTemplateContainer,
   }
 ];
 
