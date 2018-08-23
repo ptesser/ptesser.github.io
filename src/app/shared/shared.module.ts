@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { DummyComponent } from './dummy/dummy.component';
 import { HookMeComponent } from './hook-me/hook-me.component';
 import { MovieService } from '../services/movie.service';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { AuxiliarySidebarComponent } from './auxiliary-sidebar/auxiliary-sidebar.component';
+import { SidebarWrapperComponent } from './sidebar-wrapper/sidebar-wrapper.component';
+import { RouterModule } from '@angular/router';
 
 const components = [
   AuxiliarySidebarComponent,
   DummyComponent,
   HookMeComponent,
+  SidebarWrapperComponent,
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
   ],

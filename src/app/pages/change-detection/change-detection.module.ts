@@ -7,10 +7,12 @@ import { AlwaysTriggerComponent } from './always-trigger/always-trigger.componen
 import { SimpleOnPushComponent } from './simple-on-push/simple-on-push.component';
 import { RunChangeDetectionComponent } from './run-change-detection/run-change-detection.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     ChangeDetectionRoutingModule
   ],
   declarations: [

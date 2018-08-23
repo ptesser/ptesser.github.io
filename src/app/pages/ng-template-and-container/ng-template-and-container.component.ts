@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem, Menu } from '../../shared/sidebar-wrapper/sidebar-wrapper.component';
 
 @Component({
   selector: 'app-ng-template-and-container',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-template-and-container.component.scss']
 })
 export class NgTemplateAndContainerComponent implements OnInit {
+
+  readonly menu: Menu = {
+    active: 'doc',
+    items: [
+      { title: 'Documentation', templateContent: 'doc' },
+      { title: 'Examples', templateContent: 'example' },
+    ],
+  };
 
   items: string[];
 

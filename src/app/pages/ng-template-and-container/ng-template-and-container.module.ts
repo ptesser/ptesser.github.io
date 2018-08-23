@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { NgTemplateAndContainerRoutingModule } from './ng-template-and-container-routing.module';
 import { NgTemplateAndContainerComponent } from './ng-template-and-container.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     NgTemplateAndContainerRoutingModule
   ],
   declarations: [NgTemplateAndContainerComponent]

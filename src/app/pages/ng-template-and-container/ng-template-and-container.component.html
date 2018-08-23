@@ -1,49 +1,53 @@
 <h1>Ng Template and Container</h1>
 
-<h2>Ng Template</h2>
-<div>
-  <h3>ng-template and ngIf</h3>
-  <div
-    *ngIf="items else loading"
-    class="card p-2">
-    <p *ngFor="let i of items">{{ i }}</p>
+<app-sidebar-wrapper [menu]="menu">
+  <div example>
+    <h2>Ng Template</h2>
+    <div>
+      <h3>ng-template and ngIf</h3>
+      <div
+        *ngIf="items else loading"
+        class="card p-2">
+        <p *ngFor="let i of items">{{ i }}</p>
+      </div>
+      <ng-template #loading>
+        <div>Loading...</div>
+      </ng-template>
+    </div>
+    
+    <h2>Ng Container</h2>
+    <div>
+      <p>Is there a way to apply a structural directive to a section of the page without having to create an extra element?</p>
+      <ng-container *ngIf="items">
+        <div class="card p-2">
+          <p *ngFor="let i of items">{{ i }}</p>
+      </div>
+      </ng-container>
+    </div>
+    
+    <h2>Dynamic Template Creation</h2>
+    <div>
+      <p>Being able to create template references and point them to other directives such as ngIf is just the beginning.</p>
+      <p>We can also take the template itself and instantiate it anywhere on the page, using the <code>ngTemplateOutlet</code> directive.</p>
+      <ng-container *ngTemplateOutlet="loading"></ng-container>
+      <ng-container [ngTemplateOutlet]="loading"></ng-container>
+    </div>
+    
+    <h2>Template Context</h2>
+    
+    <div>
+      <ng-template
+        #counterTemplate
+        let-counter="value">
+        {{ counter }}
+      </ng-template>
+    
+      <ng-container *ngTemplateOutlet="counterTemplate, context: templateContext"></ng-container>
+      <ng-container
+        [ngTemplateOutlet]="counterTemplate"
+        [ngTemplateOutletContext]="{ value: templateContext.value }">
+      </ng-container>
+    
+    </div>
   </div>
-  <ng-template #loading>
-    <div>Loading...</div>
-  </ng-template>
-</div>
-
-<h2>Ng Container</h2>
-<div>
-  <p>Is there a way to apply a structural directive to a section of the page without having to create an extra element?</p>
-  <ng-container *ngIf="items">
-    <div class="card p-2">
-      <p *ngFor="let i of items">{{ i }}</p>
-  </div>
-  </ng-container>
-</div>
-
-<h2>Dynamic Template Creation</h2>
-<div>
-  <p>Being able to create template references and point them to other directives such as ngIf is just the beginning.</p>
-  <p>We can also take the template itself and instantiate it anywhere on the page, using the <code>ngTemplateOutlet</code> directive.</p>
-  <ng-container *ngTemplateOutlet="loading"></ng-container>
-  <ng-container [ngTemplateOutlet]="loading"></ng-container>
-</div>
-
-<h2>Template Context</h2>
-
-<div>
-  <ng-template
-    #counterTemplate
-    let-counter="value">
-    {{ counter }}
-  </ng-template>
-
-  <ng-container *ngTemplateOutlet="counterTemplate, context: templateContext"></ng-container>
-  <ng-container
-    [ngTemplateOutlet]="counterTemplate"
-    [ngTemplateOutletContext]="{ value: templateContext.value }">
-  </ng-container>
-
-</div>
+</app-sidebar-wrapper>

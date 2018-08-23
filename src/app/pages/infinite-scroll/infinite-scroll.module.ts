@@ -5,10 +5,12 @@ import { InfiniteScrollModule as NgxInfiniteScrollModule } from 'ngx-infinite-sc
 
 import { InfiniteScrollRoutingModule } from './infinite-scroll-routing.module';
 import { InfiniteScrollComponent } from './infinite-scroll.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     NgxInfiniteScrollModule,
     InfiniteScrollRoutingModule
   ],

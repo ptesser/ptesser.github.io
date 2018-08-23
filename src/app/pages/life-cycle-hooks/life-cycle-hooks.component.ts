@@ -54,7 +54,7 @@ Called just before Angular destroys the directive/component.
 export class LifeCycleHooksComponent
   implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
-  readonly hooksCalled: string[] = [];
+  hooksCalled: string[] = [];
 
   constructor(private readonly dummy: DummyService) {
     // we'll see output 0 because in this component DummyService is a new instance if set as providers of the current component
@@ -98,6 +98,7 @@ export class LifeCycleHooksComponent
 
   ngOnDestroy() {
     this.hooksCalled.push('ngOnDestroy');
+    this.hooksCalled = [];
     console.log('ngOnDestroy trigger');
   }
 
