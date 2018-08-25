@@ -5,11 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms.component';
 import { FormsRoutingModule } from './forms-routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
+    MarkdownModule,
     FormsRoutingModule,
     NgFormsModule,
     ReactiveFormsModule,

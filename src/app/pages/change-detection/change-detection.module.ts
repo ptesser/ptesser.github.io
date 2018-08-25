@@ -8,11 +8,13 @@ import { SimpleOnPushComponent } from './simple-on-push/simple-on-push.component
 import { RunChangeDetectionComponent } from './run-change-detection/run-change-detection.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 import { SharedModule } from '../../shared/shared.module';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
+    MarkdownModule,
     ChangeDetectionRoutingModule
   ],
   declarations: [
