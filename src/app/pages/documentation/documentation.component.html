@@ -1,1 +1,20 @@
 <h1>{{ 'Documentation' }}</h1>
+
+<div
+  *ngIf="menu"
+  class="row">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <li
+        *ngFor="let i of menu"
+        [routerLink]="i.path"
+        [routerLinkActive]="'active'"
+        class="list-group-item pointer">
+        {{ i.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
