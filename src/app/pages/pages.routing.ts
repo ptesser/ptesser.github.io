@@ -12,6 +12,7 @@ const auxiliaryRoutes = './auxiliary-routes/auxiliary-routes.module#AuxiliaryRou
 const changeDetection = './change-detection/change-detection.module#ChangeDetectionModule';
 const infiniteScroll = './infinite-scroll/infinite-scroll.module#InfiniteScrollModule';
 const ngTemplateContainer = './ng-template-and-container/ng-template-and-container.module#NgTemplateAndContainerModule';
+const documentation = './documentation/documentation.module#DocumentationModule';
 
 const routes: Routes = [
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'ng-template-container',
     loadChildren: ngTemplateContainer,
+  },
+  {
+    path: 'documentation',
+    loadChildren: documentation,
   }
 ];
 
