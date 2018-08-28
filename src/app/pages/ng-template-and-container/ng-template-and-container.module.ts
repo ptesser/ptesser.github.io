@@ -10,7 +10,7 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    MarkdownModule,
+    MarkdownModule.forChild(),
     NgTemplateAndContainerRoutingModule
   ],
   declarations: [NgTemplateAndContainerComponent]

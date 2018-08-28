@@ -11,10 +11,10 @@ import { MarkdownModule } from 'ngx-markdown';
   imports: [
     CommonModule,
     SharedModule,
-    MarkdownModule,
-    FormsRoutingModule,
+    MarkdownModule.forChild(),
     NgFormsModule,
     ReactiveFormsModule,
+    FormsRoutingModule,
   ],
   declarations: [FormsComponent]
 })

@@ -10,7 +10,7 @@ import { MarkdownModule } from 'ngx-markdown';
   imports: [
     CommonModule,
     SharedModule,
-    MarkdownModule,
+    MarkdownModule.forChild(),
     AuxiliaryRoutesRoutingModule
   ],
   declarations: [AuxiliaryRoutesComponent]

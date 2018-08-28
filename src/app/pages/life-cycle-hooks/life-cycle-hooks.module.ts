@@ -8,9 +8,9 @@ import { MarkdownModule } from 'ngx-markdown';
 @NgModule({
   imports: [
     CommonModule,
-    MarkdownModule,
-    LifeCycleHooksRoutingModule,
+    MarkdownModule.forChild(),
     SharedModule,
+    LifeCycleHooksRoutingModule,
   ],
   declarations: [LifeCycleHooksComponent]
 })
